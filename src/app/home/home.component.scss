@@ -1,0 +1,27 @@
+/* ----- Div principal ----- */
+
+.main-div { 
+    background-color: purple;
+    height: 100vh;    
+    display: flex;
+    align-items: center;
+    justify-content: center;      
+}
+
+.container {
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;    
+}
+
+.panel-text {
+    width: 70%;
+}
+
+.panel-btn {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
