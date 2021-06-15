@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, OnInit } from '@angular/core';
+import { RandomService } from '../random.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  // providers: [RandomOrg],
 })
 export class HomeComponent implements OnInit {
+  // random = new RandomOrg({ apiKey: 'be25a646-467a-44ed-877f-dcf67fc5a004' });
 
-  constructor() { }
+  constructor(private randomService: RandomService) {}
 
-  ngOnInit(): void {
+  enterPress() {
+    console.log('oi');
+    this.randomService.sendPostRequest().subscribe((res) => {
+      // console.log(res['result']['random']['data'][0]);
+      console.log(res['result']['random']['data'][0]);
+    });
   }
 
+  ngOnInit(): void {}
 }
